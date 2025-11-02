@@ -1,0 +1,41 @@
+body {
+    font-family: 'Inter', sans-serif;
+
+    /* Aqui usamos uma imagem de placeholder como fundo.
+              Troque 'https://placehold.co/1920x1080/...' pela URL da sua imagem.
+              O 'linear-gradient' é o que dá o tom azulado por cima da imagem,
+              exatamente como no exemplo que você enviou.
+            */
+    background-image: linear-gradient(rgba(10, 30, 70, 0.9), rgba(5, 15, 40, 0.95)), url('https://placehold.co/1920x1080/333333/FFFFFF?text=Imagem+de+Fundo');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Define uma cor azul escura personalizada para a caixa de login, 
+          para ficar o mais próximo possível da imagem.
+        */
+.bg-custom-blue-box {
+    background-color: #0c2b5a;
+    /* Um tom de azul escuro e forte */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #050f28;
+    /* Fundo azul bem escuro */
+}
+
+/* Estilização leve para os inputs da tabela */
+/* Para navegadores baseados em WebKit (Chrome, Safari, Edge) */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Para Firefox */
+input[type="number"] {
+    appearance: textfield;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+}

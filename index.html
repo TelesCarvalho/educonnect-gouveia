@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    
+    <!-- Carrega o Tailwind CSS (para estilização) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Carrega a fonte 'Inter' do Google Fonts, que é uma fonte limpa e moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="text-white">
+
+    <!-- Container principal que centraliza tudo na tela -->
+    <div class="relative flex items-center justify-center min-h-screen p-4">
+
+        <!-- Link "Voltar para o site" (canto superior direito) -->
+        <a href="#" class="absolute top-6 right-8 text-sm text-white/80 hover:text-white transition-colors"
+           title="Voltar para o site principal">
+            Voltar para o site da UNIP
+        </a>
+
+        <!-- Caixa de Login Central -->
+        <div class="bg-custom-blue-box p-8 sm:p-10 rounded-lg shadow-2xl w-full max-w-md">
+            
+            <!-- Logo (simulado com texto) -->
+            <div class="text-center mb-4">
+                <span class="text-yellow-400 text-4xl font-bold tracking-wider">UNIP</span>
+            </div>
+
+            <!-- Título da Caixa -->
+            <h1 class="text-center text-2xl font-semibold mb-8">
+                Área do(a) Aluno(a)
+            </h1>
+
+            <!-- Formulário de Login -->
+            <form action="/login" method="POST">
+                
+                <!-- Campo 1: RA -->
+                <div class="mb-4">
+                    <label for="ra" class="sr-only">RA (número de matrícula)</label>
+                    <input type="text" id="ra" name="ra" placeholder="RA (número de matrícula)"
+                           class="w-full px-4 py-3 bg-white text-gray-900 rounded-md border border-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-shadow"
+                           required>
+                </div>
+
+                <!-- Campo 2: Senha -->
+                <div class="mb-6">
+                    <label for="senha" class="sr-only">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Senha"
+                           class="w-full px-4 py-3 bg-white text-gray-900 rounded-md border border-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-shadow"
+                           required>
+                </div>
+
+                <!-- Botão de Entrar -->
+                <button type="submit"
+                        class="w-full bg-green-500 hover:bg-green-600 text-white text-lg font-bold py-3 rounded-md transition-colors duration-300 ease-in-out">
+                    ENTRAR
+                </button>
+            </form>
+
+            <!-- Links inferiores -->
+            <div class="flex justify-between items-center mt-6">
+                <a href="#" class="text-sm text-white/90 hover:text-white hover:underline transition-colors">
+                    Esqueci a senha
+                </a>
+                <a href="#" class="text-sm text-white/90 hover:text-white hover:underline transition-colors">
+                    Como acessar
+                </a>
+            </div>
+        </div>
+        <!-- Fim da Caixa de Login -->
+
+    </div>
+    <!-- Fim do Container Principal -->
+</body>
+</html>

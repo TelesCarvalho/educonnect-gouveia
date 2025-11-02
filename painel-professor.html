@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Professor - Notas e Faltas</title>
+    
+    <!-- Carrega o Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Carrega a fonte 'Inter' -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    
+</head>
+<body class="text-gray-900">
+
+    <!-- 1. Cabeçalho Principal -->
+    <header class="bg-custom-blue-box bg-[#0c2b5a] text-white shadow-lg">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                     <span class="text-yellow-400 text-3xl font-bold tracking-wider">UNIP</span>
+                </div>
+                <!-- Infos do Professor e Sair -->
+                <div class="flex items-center">
+                    <span class="hidden sm:block mr-4">Olá, Prof. Silva</span>
+                    <a href="login.html" class="bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        Sair
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 2. Conteúdo Principal (Painel) -->
+    <main class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+    
+        <!-- Título e Seletores -->
+        <div class="mb-6">
+            <h1 class="text-3xl font-bold text-white mb-4">Painel de Notas e Faltas</h1>
+            
+            <!-- Seletores de Disciplina e Turma -->
+            <div class="flex flex-col sm:flex-row gap-4 items-end">
+                <!-- Seletor de Disciplina -->
+                <div>
+                    <label for="disciplina" class="block text-sm font-medium text-white/80 mb-1">Disciplina</label>
+                    <select id="disciplina" name="disciplina" class="w-full sm:w-64 bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option>Engenharia de Software III</option>
+                        <option>Banco de Dados</option>
+                        <option>Redes de Computadores</option>
+                    </select>
+                </div>
+                <!-- Seletor de Turma -->
+                <div>
+                    <label for="turma" class="block text-sm font-medium text-white/80 mb-1">Turma</label>
+                    <select id="turma" name="turma" class="w-full sm:w-48 bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option>SI5A-N</option>
+                        <option>CC4B-M</option>
+                        <option>ADS2A-T</option>
+                    </select>
+                </div>
+
+                <!-- NOVO BOTÃO DE CHAMADA -->
+                <div class="ml-0 sm:ml-auto">
+                    <a href="chamada-professor.html"
+                       class="w-full sm:w-auto flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-md transition-colors duration-300 shadow-md">
+                        Fazer Chamada
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Card da Tabela de Alunos -->
+        <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">RA</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nome do Aluno</th>
+                            <th scope="col" class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-28">Nota B1</th>
+                            <th scope="col" class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-28">Nota B2</th>
+                            <th scope="col" class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-28">Faltas (Total)</th>
+                            <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Média</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        
+                        <!-- Aluno 1 (Dados Fictícios) -->
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">A123BC</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Ana Beatriz Costa</td>
+                            <td class="px-4 py-2"><input type="number" step="0.1" value="8.5" class="w-full p-2 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"></td>
+                            <td class="px-4 py-2"><input type="number" step="0.1" value="7.0" class="w-full p-2 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"></td>
+                            <!-- CAMPO DE FALTAS MODIFICADO (AGORA É TEXTO) -->
+                            <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium text-gray-800">2</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-bold text-blue-600">7.75</td>
+                        </tr>
+                        
+                        <!-- Aluno 2 (Dados Fictícios) -->
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">D456EF</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Bruno Dias Oliveira</td>
+                            <td class="px-4 py-2"><input type="number" step="0.1" value="5.0" class="w-full p-2 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"></td>
+                            <td class="px-4 py-2"><input type="number" step="0.1" value="6.5" class="w-full p-2 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"></td>
+                            <!-- CAMPO DE FALTAS MODIFICADO (AGORA É TEXTO) -->
+                            <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium text-gray-800">0</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-bold text-green-600">5.75</td>
+                        </tr>
+
+                        <!-- Aluno 3 (Dados Fictícios) -->
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">G789HI</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Carla Mendes Souza</td>
+                            <td class="px-4 py-2"><input type="number" step="0.1" value="10.0" class="w-full p-2 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"></td>
+                            <td class="px-4 py-2"><input type="number" step="0.1" value="9.5" class="w-full p-2 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"></td>
+                            <!-- CAMPO DE FALTAS MODIFICADO (AGORA É TEXTO) -->
+                            <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium text-gray-800">1</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-bold text-blue-600">9.75</td>
+                        </tr>
+
+                        <!-- Aluno 4 (Dados Fictícios) -->
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">J101KL</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">Daniel Moreira</td>
+                            <td class="px-4 py-2"><input type="number" step="0.1" value="3.0" class="w-full p-2 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"></td>
+                            <td class="px-4 py-2"><input type="number" step="0.1" class="w-full p-2 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="N/A"></td>
+                            <!-- CAMPO DE FALTAS MODIFICADO (AGORA É TEXTO) -->
+                            <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium text-gray-800">8</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-bold text-red-600">--</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Rodapé do Card com Botão Salvar -->
+            <div class="bg-gray-50 px-6 py-4 text-right">
+                <button type="button"
+                        class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-md transition-colors duration-300 shadow-md">
+                    Salvar Alterações
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>

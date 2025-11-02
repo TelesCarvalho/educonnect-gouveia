@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="text-2xl font-semibold mb-6">Boas-vindas, {{ user.name }} 👋</h1>
+
+<div class="grid md:grid-cols-2 gap-6">
+  <section class="bg-custom-blue-box p-6 rounded-lg shadow-xl">
+    <h2 class="text-xl font-semibold mb-4 text-yellow-400">Notas</h2>
+    {% if notas %}
+      <ul class="space-y-3">
+        {% for n in notas %}
+          <li class="bg-white text-gray-900 rounded p-3 flex justify-between items-center">
+            <span class="font-medium">{{ n.disciplina }}</span>
+            <span class="px-3 py-1 rounded bg-gray-200">{{ '%.1f'|format(n.nota) }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="text-white/80">Nenhuma nota lançada ainda.</p>
+    {% endif %}
+  </section>
+
+  <section class="bg-custom-blue-box p-6 rounded-lg shadow-xl">
+    <h2 class="text-xl font-semibold mb-4 text-yellow-400">Faltas</h2>
+    {% if faltas %}
+      <ul class="space-y-3">
+        {% for f in faltas %}
+          <li class="bg-white text-gray-900 rounded p-3 flex justify-between items-center">
+            <span class="font-medium">{{ f.disciplina }}</span>
+            <span class="px-3 py-1 rounded bg-gray-200">{{ f.faltas }} falta(s)</span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="text-white/80">Nenhuma falta registrada.</p>
+    {% endif %}
+  </section>
+</div>
+{% endblock %}

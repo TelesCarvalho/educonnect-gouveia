@@ -1,0 +1,9 @@
+{
+  "python.defaultInterpreterPath": 
+    "c:/Users/Felipe Teles/Downloads/projeto_Guilherme_e_Eduardo/.venv/Scripts/python.exe",
+  "python.analysis.diagnosticMode": "workspace",
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.venv": true
+  }
+}

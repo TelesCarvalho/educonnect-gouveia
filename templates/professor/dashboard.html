@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="text-2xl font-semibold mb-6">Painel do Professor</h1>
+
+<div class="grid md:grid-cols-2 gap-6">
+  <section class="bg-custom-blue-box p-6 rounded-lg shadow-xl">
+    <h2 class="text-xl font-semibold mb-4 text-yellow-400">Lançar Nota</h2>
+    <form action="/professor/notas" method="POST" class="space-y-3">
+      <div>
+        <label for="aluno_ra" class="block text-sm mb-1">RA do aluno</label>
+        <input type="text" id="aluno_ra" name="aluno_ra" required class="w-full px-3 py-2 rounded text-gray-900" />
+      </div>
+      <div>
+        <label for="disciplina" class="block text-sm mb-1">Disciplina</label>
+        <input type="text" id="disciplina" name="disciplina" required class="w-full px-3 py-2 rounded text-gray-900" />
+      </div>
+      <div>
+        <label for="nota" class="block text-sm mb-1">Nota (0 a 10)</label>
+        <input type="number" step="0.1" min="0" max="10" id="nota" name="nota" required class="w-full px-3 py-2 rounded text-gray-900" />
+      </div>
+      <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold px-4 py-2 rounded">Salvar</button>
+    </form>
+  </section>
+
+  <section class="bg-custom-blue-box p-6 rounded-lg shadow-xl">
+    <h2 class="text-xl font-semibold mb-4 text-yellow-400">Registrar Faltas</h2>
+    <form action="/professor/faltas" method="POST" class="space-y-3">
+      <div>
+        <label for="aluno_ra_f" class="block text-sm mb-1">RA do aluno</label>
+        <input type="text" id="aluno_ra_f" name="aluno_ra" required class="w-full px-3 py-2 rounded text-gray-900" />
+      </div>
+      <div>
+        <label for="disciplina_f" class="block text-sm mb-1">Disciplina</label>
+        <input type="text" id="disciplina_f" name="disciplina" required class="w-full px-3 py-2 rounded text-gray-900" />
+      </div>
+      <div>
+        <label for="faltas" class="block text-sm mb-1">Quantidade de faltas</label>
+        <input type="number" min="0" id="faltas" name="faltas" required class="w-full px-3 py-2 rounded text-gray-900" />
+      </div>
+      <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold px-4 py-2 rounded">Salvar</button>
+    </form>
+  </section>
+</div>
+
+<section class="bg-custom-blue-box p-6 rounded-lg shadow-xl mt-6">
+  <h2 class="text-xl font-semibold mb-4 text-yellow-400">Lista de Alunos</h2>
+  {% if alunos %}
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white text-gray-900 rounded">
+        <thead>
+          <tr class="bg-gray-100 text-left">
+            <th class="p-3">RA</th>
+            <th class="p-3">Nome</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for a in alunos %}
+            <tr class="border-t">
+              <td class="p-3 font-mono">{{ a.ra }}</td>
+              <td class="p-3">{{ a.name }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <p class="text-white/80">Nenhum aluno encontrado.</p>
+  {% endif %}
+</section>
+{% endblock %}
